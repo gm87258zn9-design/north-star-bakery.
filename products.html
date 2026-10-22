@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Breads pastries and cakes | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="products-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -27,6 +28,38 @@
       <h1>Breads, pastries, and cakes</h1>
       <p class="lead">Everyday favorites and treats for your next celebration.</p>
     </div>
+    <section class="favorites-feature" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading">Find your favorites</h2>
+      <p>Save a few favorites for your next pickup. Your list stays in this
+        browser and can help you fill out a preorder request.</p>
+      <div id="favorites-app" hidden>
+        <p>
+          <label for="category-filter">Browse by category</label>
+          <select id="category-filter">
+            <option value="all">All products</option>
+            <option value="bread">Breads</option>
+            <option value="pastry">Pastries</option>
+            <option value="cake">Cakes</option>
+          </select>
+        </p>
+        <p id="catalog-status" role="status" aria-live="polite"></p>
+        <div id="product-list" class="favorite-products"></div>
+        <div class="saved-panel">
+          <h3>Your saved favorites</h3>
+          <ul id="saved-list"></ul>
+          <p id="favorites-status" role="status" aria-live="polite"></p>
+          <p id="storage-note" class="helper"></p>
+          <p class="actions">
+            <a class="button" href="contact.html">Use favorites in a request</a>
+            <button id="clear-favorites" class="secondary-button" type="button">
+              Clear favorites
+            </button>
+          </p>
+        </div>
+      </div>
+      <noscript><p>Turn on JavaScript to filter products and save favorites.
+        You can still browse the product categories below and use the contact form.</p></noscript>
+    </section>
     <p class="page-note">Pick up a weekday favorite or request something for your next gathering.
       Prices below are sample ranges for this student website.</p>
     <section class="bread-section">

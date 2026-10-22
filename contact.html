@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact and preorder requests | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="contact-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -42,6 +43,16 @@
       <p id="form-note">Fields marked required must be completed.
         This student demonstration checks your entries in the browser.
         It does not send a request or reserve items.</p>
+      <div id="request-favorites" class="saved-panel" hidden>
+        <h3>Bring your favorites along</h3>
+        <p id="request-saved-list"></p>
+        <p id="request-storage-note" class="helper"></p>
+        <button id="add-favorites" type="button" class="secondary-button">
+          Add saved favorites to item details
+        </button>
+        <p id="prefill-status" role="status" aria-live="polite"></p>
+      </div>
+      <p id="form-errors" role="alert" hidden></p>
       <form action="contact.html" method="get" aria-describedby="form-note">
         <fieldset>
           <legend>Your contact information</legend>
@@ -67,7 +78,7 @@
             </select>
           </p>
           <p>
-            <label for="pickup">Preferred pickup date (optional)</label>
+            <label for="pickup">Preferred pickup date (required for preorders)</label>
             <input id="pickup" name="pickup" type="date"
               aria-describedby="pickup-help">
           </p>
@@ -87,10 +98,17 @@
               maxlength="500"></textarea>
           </p>
         </fieldset>
-        <button class="button" type="submit">Check request details</button>
-        <p>After successful validation, this page reloads with the entered
-          details in the address bar. No request is delivered.</p>
+        <button class="button" type="submit">Review request details</button>
+        <p>This student website does not send requests or reserve items.
+          With JavaScript enabled, you can review valid details on this page.</p>
+        <noscript><p>JavaScript is off. Your browser still checks required fields
+          and email format. Submitting reloads this demonstration page; no request is sent.</p></noscript>
       </form>
+      <div id="request-review" class="saved-panel" role="status" hidden>
+        <h3>Your request details are ready to review</h3>
+        <p>This is a preview only. No request has been sent and no items are reserved.</p>
+        <p id="review-text"></p>
+      </div>
     </section>
   </main>
   <footer class="site-footer">

@@ -118,3 +118,30 @@ textarea { resize: vertical; }
   .contact-page .request-card { flex: 2 1 60%; }
   .site-footer { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 2rem; }
 }
+
+/* Touchstone 4: favorites, accessible feedback, and request review. */
+[hidden] { display: none !important; }
+.page-content > .favorites-feature { flex: 0 0 100%; }
+.favorite-products { display: flex; flex-direction: column; gap: 1rem; margin-block: 1.5rem; }
+.product-choice { display: flex; flex-direction: column; gap: .65rem;
+  padding: 1.2rem; border: 1px solid var(--peach); border-radius: .25rem; min-width: 0; }
+.product-choice h3 { margin: 0; }
+.product-choice .secondary-button { margin-top: auto; align-self: flex-start; }
+.secondary-button { background: var(--cream); color: var(--brown);
+  border: 2px solid var(--brown); border-radius: .25rem; padding: .7rem 1rem;
+  font: bold 1rem/1.4 Arial, sans-serif; cursor: pointer; }
+.secondary-button:hover, .secondary-button[aria-pressed="true"] {
+  background: var(--brown); color: var(--cream); }
+button:disabled { opacity: .6; cursor: default; }
+.saved-panel { padding: 1.25rem; margin-block: 1.25rem;
+  border: 2px solid var(--brown); border-radius: .25rem; }
+.saved-panel h3 { margin-top: 0; }
+.helper, .field-error { font-size: .9rem; }
+.field-error { display: block; color: var(--brown); font-weight: bold; margin-top: .4rem; }
+[aria-invalid="true"] { border: 3px solid var(--brown); }
+#form-errors { border-left: 4px solid var(--brown); padding: .75rem; font-weight: bold; }
+#review-text { white-space: pre-line; overflow-wrap: anywhere; }
+@media (min-width: 48rem) {
+  .favorite-products { flex-direction: row; flex-wrap: wrap; }
+  .product-choice { flex: 1 1 calc(33.333% - 1rem); }
+}
